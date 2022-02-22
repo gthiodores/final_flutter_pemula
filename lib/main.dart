@@ -1,5 +1,4 @@
-import 'package:final_flutter_pemula/models/notes.dart';
-import 'package:final_flutter_pemula/screens/detail_screen/detail_screen.dart';
+import 'package:final_flutter_pemula/screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -15,9 +14,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DetailScreen(
-          note: Notes(id: 1, lastEdit: DateTime.now().millisecondsSinceEpoch),
-      ),
+      // home: DetailScreen(
+      //     note: Notes(id: 1, lastEdit: DateTime.now().millisecondsSinceEpoch),
+      // ),
+      home: const MainScreen(),
     );
   }
 }

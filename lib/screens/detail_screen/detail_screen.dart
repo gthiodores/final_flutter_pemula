@@ -18,10 +18,20 @@ class _DetailScreenState extends State<DetailScreen> {
   final _textControllerTitle = TextEditingController();
   final _textControllerBody = TextEditingController();
 
+
+  @override
+  void initState() {
+    super.initState();
+    _textControllerTitle.text = widget.note.title;
+    _textControllerBody.text = widget.note.body;
+  }
+
   void _onConfirmed() {
     widget.note
       ..body = _textControllerBody.value.text
-      ..title = _textControllerTitle.value.text;
+      ..title = _textControllerTitle.value.text
+      ..lastEdit = DateTime.now().millisecondsSinceEpoch;
+    Navigator.pop(context, widget.note);
   }
 
   @override
